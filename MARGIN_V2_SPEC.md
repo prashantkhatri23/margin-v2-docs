@@ -1009,7 +1009,12 @@ state, pending-consolidation counts. It computes nothing new. Three zones:
 
 1. **Greeting** — name, time of day, and **one** temporal hook (a question or
    callback from `temporal_context.md`; rotate, never stack — the last hook used
-   is recorded in `.margin/ui_state.yml`).
+   is recorded in `.margin/ui_state.yml`). **The hook is an offer, not a
+   reminder:** it must read as a companion's curiosity or care and end with a
+   way in. ✅ "The blog's been sitting there ready — want to talk through what
+   the first post could be?" ✗ "The blog site is built and waiting for its
+   first post — just flagging it." A hook that reads as a status flag, task
+   nudge, or progress report is a voice defect.
 2. **Status strip** — only lines that are true: an open proposal (rendered from
    `.margin/open_proposal.yml`: title + item count), pending-consolidation count
    when ≥ nudge threshold, resumable drafts. No empty-state noise.

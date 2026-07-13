@@ -7,16 +7,35 @@ without your yes.
 
 ## Starting
 
+The one-word way (recommended — set up once, see below):
+
+```
+margin
+```
+
+Or by hand:
+
 ```
 cd margin_v2_test
 claude
 ```
 
-That's it. Margin greets you with the **home screen**: a personal hello, one
-thread picked up from your recent life, anything waiting for you (a letter to
-review, entries to consolidate), and the menu of things you can do. You never
-need exact commands — plain words work: "let's journal", "I want to tell you
-about something from my childhood", "just want to talk".
+then say anything — "hi" is enough. (Claude Code always waits for your first
+message; it can't speak unprompted. The `margin` alias sends that first "hi"
+for you, so the home screen appears immediately.)
+
+Either way, Margin opens with the **home screen**: a personal hello, one
+thread picked up from your recent life — offered as an invitation, never a
+to-do reminder — anything waiting for you (a letter to review, entries to
+consolidate), and the menu of things you can do. You never need exact
+commands — plain words work: "let's journal", "I want to tell you about
+something from my childhood", "just want to talk".
+
+**One-time alias setup** — add this line to your `~/.zshrc`:
+
+```
+alias margin='cd /Users/prashantkhatri/Documents/margin/margin_v2_test && claude "hi"'
+```
 
 ## The six things you can do
 
