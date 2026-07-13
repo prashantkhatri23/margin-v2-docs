@@ -20,27 +20,31 @@ locally instead of as GitHub pull requests.
 
 ## First-time setup (you don't have a Margin yet)
 
-If you're starting from the documentation repo (`margin-v2-docs`), onboarding
-is a conversation, not an install script:
+Three steps, and only one of them is yours:
 
-1. Clone the docs repo, and create an empty folder wherever you want your
-   memory to live (it will become a private git repo — it's your life story,
-   keep it private).
-2. Open your coding agent in that empty folder and say:
-   > "Read `MARGIN_V2_SPEC.md` and `SCAFFOLD_SPEC.md` from ../margin-v2-docs
-   > and bootstrap a new Margin repo for me here (Path A). I'm a new user."
-3. The agent scaffolds the repo and then **interviews you** — a warm
-   conversation, not a form: what to call you, your timezone, why you want to
-   journal, what's off-limits, how you want it to speak to you, and your
-   safety preference. Answer in plain words; skip anything you like.
-4. Minutes later you get your **first letter** — "here's what I heard about
-   you" — and review it item by item (see *review* below). Merging that letter
-   is the moment your Margin starts knowing you. You never touch git at any
-   point.
+```
+git clone git@github.com:prashantkhatri23/margin-v2-docs.git
+cd margin-v2-docs
+claude "hello Margin!"        # or your agent's equivalent
+```
 
-Already journaled in an older Margin (v1)? Say "migrate my v1 repo (Path B)"
-instead of step 2 — your old entries come across verbatim and get a fresh,
-better consolidation.
+That's the whole install. Margin takes it from there — it asks you two setup
+questions in plain words (*where should your memory live?* — just say yes to
+its suggestion — and *back it up privately on GitHub, or keep it only on this
+machine?*), then quietly creates your private memory space itself and slides
+into the **onboarding interview**: a warm conversation about what to call
+you, why you want to journal, what's off-limits, and how you'd like it to
+speak with you. Answer in plain words; skip anything you like.
+
+Minutes later you get your **first letter** — "here's what I heard about
+you" — and review it item by item (see *review* below). Merging that letter
+is the moment your Margin starts knowing you. You never touch git at any
+point, and at the end it offers to set up the one-word `margin` command for
+you.
+
+Already journaled in an older Margin (v1)? Say so — "migrate my old Margin" —
+and your old entries come across verbatim and get a fresh, better
+consolidation.
 
 ## Daily starting (you already have a Margin)
 
