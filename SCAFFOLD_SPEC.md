@@ -51,6 +51,10 @@ Create the exact spec §3.1 tree:
   stub templates. (Deliberate v1 change: v1 seeded stubs because empty pinned
   files degraded runs; v2's first consolidation runs minutes later, so stubs
   would only add noise the user never asked for.)
+- **Install the product into the instance** so the repo is self-contained:
+  copy the skills (including `_shared/`) into `.claude/skills/`, the spec +
+  `SCAFFOLD_SPEC.md` + `templates/` into `.margin/spec/`, and `USAGE.md` to
+  the repo root.
 - Scaffold commit: `chore(bootstrap): scaffold margin repo (spec 2.0.0)`. (The
   onboarding session follows in subsequent commits — spec §14.5's "initial
   commit" refers to this whole bootstrap sequence, of which this is the first.)
