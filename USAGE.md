@@ -1,11 +1,48 @@
 # Using Margin — a plain guide
 
-Margin is your journaling companion. This repo *is* the app: open a Claude
-Code session inside this folder and you're talking to Margin. Everything it
-remembers about you lives here as readable files, and nothing becomes memory
+Margin is your journaling companion. Your memory repo *is* the app: open a
+coding agent inside that folder and you're talking to Margin. Everything it
+remembers about you lives there as readable files, and nothing becomes memory
 without your yes.
 
-## Starting
+## Which agents does this work with?
+
+Margin is **not** built for Claude Code specifically — it's built on plain
+markdown, git, and the cross-vendor `AGENTS.md` convention. Any capable coding
+agent that reads `AGENTS.md` (Claude Code, Codex, Cursor's CLI, and the like)
+can be Margin: the schema file tells the agent what this repo is, where the
+skills and the spec live, and how to behave. Claude Code additionally picks up
+the skills natively from `.claude/skills/`; other agents reach the same skill
+files through the pointers in `AGENTS.md`. What you need on the machine: git,
+your agent of choice, and (optional but recommended) the GitHub CLI `gh` —
+without it Margin still works fully, it just delivers its review letters
+locally instead of as GitHub pull requests.
+
+## First-time setup (you don't have a Margin yet)
+
+If you're starting from the documentation repo (`margin-v2-docs`), onboarding
+is a conversation, not an install script:
+
+1. Clone the docs repo, and create an empty folder wherever you want your
+   memory to live (it will become a private git repo — it's your life story,
+   keep it private).
+2. Open your coding agent in that empty folder and say:
+   > "Read `MARGIN_V2_SPEC.md` and `SCAFFOLD_SPEC.md` from ../margin-v2-docs
+   > and bootstrap a new Margin repo for me here (Path A). I'm a new user."
+3. The agent scaffolds the repo and then **interviews you** — a warm
+   conversation, not a form: what to call you, your timezone, why you want to
+   journal, what's off-limits, how you want it to speak to you, and your
+   safety preference. Answer in plain words; skip anything you like.
+4. Minutes later you get your **first letter** — "here's what I heard about
+   you" — and review it item by item (see *review* below). Merging that letter
+   is the moment your Margin starts knowing you. You never touch git at any
+   point.
+
+Already journaled in an older Margin (v1)? Say "migrate my v1 repo (Path B)"
+instead of step 2 — your old entries come across verbatim and get a fresh,
+better consolidation.
+
+## Daily starting (you already have a Margin)
 
 The one-word way (recommended — set up once, see below):
 
@@ -16,13 +53,13 @@ margin
 Or by hand:
 
 ```
-cd margin_v2_test
-claude
+cd <your-margin-repo>
+claude        # or codex, or whichever agent you use
 ```
 
-then say anything — "hi" is enough. (Claude Code always waits for your first
-message; it can't speak unprompted. The `margin` alias sends that first "hi"
-for you, so the home screen appears immediately.)
+then say anything — "hi" is enough. (Coding agents wait for your first
+message; they can't speak unprompted. The `margin` alias sends that first
+"hi" for you, so the home screen appears immediately.)
 
 Either way, Margin opens with the **home screen**: a personal hello, one
 thread picked up from your recent life — offered as an invitation, never a
@@ -31,7 +68,8 @@ consolidate), and the menu of things you can do. You never need exact
 commands — plain words work: "let's journal", "I want to tell you about
 something from my childhood", "just want to talk".
 
-**One-time alias setup** — add this line to your `~/.zshrc`:
+**One-time alias setup** — add this line to your `~/.zshrc` (adjust the path,
+and swap `claude "hi"` for your agent's equivalent if you use a different one):
 
 ```
 alias margin='cd /Users/prashantkhatri/Documents/margin/margin_v2_test && claude "hi"'
