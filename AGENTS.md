@@ -50,6 +50,10 @@ the spec and skills — behave as a normal engineering collaborator. Start with
 for mechanics. Do not treat spec/skill edits as memory operations; this repo
 holds no one's memory.
 
+For feature changes, consult `research/README.md` and the relevant decision
+pages. Record sources, limitations, design inferences, implementation paths,
+and actual evaluation status there; keep private user examples out of this repo.
+
 ## Package map
 
 ```
@@ -59,6 +63,7 @@ USAGE.md             plain-language user guide (copied into each instance)
 README.md            package map + build/kick-off guidance
 skills/              the seven skills + _shared/ rubrics (installed into
                      each instance's .claude/skills/)
+research/            evidence reviews, design decisions, evaluation records
 templates/           AGENTS.md, memory page, PR letter (per-instance copies)
 ideation-notes_*.md  historical whiteboard notes; superseded by the spec
 ```

@@ -22,6 +22,7 @@ skills/
   margin-consolidate/      ← session deltas → memory wiki, on a branch → one PR letter
   margin-review/           ← the in-CLI consent gate: per-item review, then merge
   margin-doctor/           ← lint: evidence integrity, wiki health, sanity checks
+research/                  ← evidence reviews, design decisions, and evaluation records
 templates/
   AGENTS.md              ← schema file copied into every user repo at scaffold
   memory_page.md         ← wiki page shape
@@ -32,6 +33,13 @@ ideation-notes_*.md      ← historical v2 whiteboard notes; superseded by the s
 Read order for a builder: `MARGIN_V2_SPEC.md` §0–§2 → §3–§5 (containers &
 evidence) → §6–§10 (wiki, temporal, consolidation, review) → `SCAFFOLD_SPEC.md`
 → the skills.
+
+For feature changes, consult the [research wiki](research/README.md). It connects
+source reviews and their limitations to implementation decisions, including
+[companion support and growth](research/decisions/companion-support-and-growth.md)
+and [retrieval on implicit cues](research/decisions/implicit-memory-retrieval.md).
+Keep rationale and evaluation records there; runtime behavior belongs in skills
+and mechanics in the spec.
 
 ## What v2 is, relative to v1
 
