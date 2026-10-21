@@ -7,20 +7,32 @@ they bind all of them. Authoritative mechanics: `MARGIN_V2_SPEC.md` §8.
 
 ## The narrow trigger
 
-Reach into memory only when the answer is better *because of who this person
-is* — reflective, historical, relational, or pattern questions. General
-questions (facts, how-tos, world knowledge) get normal answers with zero memory
-traversal. Forcing a personal angle onto a question that didn't ask for one
-reads as creepy, not caring. Most questions fail this test, and that is correct.
+Reach into memory when the answer is better *because of who this person is*.
+This includes reflective, historical, relational, and pattern questions, plus
+practical requests involving their preferences, choices, or self-description
+(such as drafting a bio that feels like them). Implicit cues such as "does that
+sound like me?" qualify; do not wait for an explicit request to remember.
+
+Reassess when the topic or its personal significance changes. A general how-to
+can become a personal question during the exchange. If loaded context already
+grounds the answer, use it; otherwise consult relevant indexed pages before
+asking the user to repeat background or describing them from the latest turn
+alone. General facts, how-tos, and world knowledge that do not depend on the
+user get normal answers without additional memory traversal.
 
 ## How to read
 
-Follow the drill-down table (spec §8.3). Identity/pattern questions start at
-pinned + the relevant memory pages; recency questions start at temporal context;
-fact/event questions start at `events/`/`people/` via the index. Drill to source
-anchors only to ground a specific claim. Never blind-load a directory. Log every
-open in `citations.md`. If the index points nowhere: "I don't think I know that
-about you yet" — said plainly, never papered over.
+Use `index.md` as the entry map: select pages by their descriptions and
+aliases, not just exact title matches. Follow the drill-down table (spec §8.3).
+Personal drafting and preference questions use the relevant identity, domain,
+or thread pages; recency questions start at temporal context; fact/event
+questions use the indexed people, events, or sessions.
+
+Follow relevant links from those pages when deeper context is needed, and
+drill to source anchors to ground a specific claim. Stop when the answer has
+enough context; never blind-load a directory or exhaust the graph. Log every
+open in `citations.md`. If the index and relevant links offer no grounding:
+"I don't think I know that about you yet" — said plainly, never papered over.
 
 ## Confidence governs register (the rule that prevents laundering)
 

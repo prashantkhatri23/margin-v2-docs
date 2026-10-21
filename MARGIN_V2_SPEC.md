@@ -747,15 +747,17 @@ so user edits flow forward naturally. (Mostly it's the agent's to maintain.)
 - **Pinned.** `system/` — every session, always.
 - **Temporal.** `temporal_context.md` (+ gap-filler summaries, §7.3) — every
   session start for conversational skills.
-- **Indexed.** Every memory page and session is *discoverable* via `index.md`
-  (path + description + confidence) but loaded only deliberately.
+- **Indexed.** Load `index.md` at session start as the entry map. Its paths,
+  descriptions, aliases, and confidence make deeper pages discoverable; load
+  those pages only when relevant to the conversation.
 - **Cold.** Everything else. Not loaded, not scanned.
 
 Hard rules carried from v1: **up carries judgment, down carries evidence** (never
 present an inference you couldn't drill to source for); **never blind-load** a
-directory — if the index doesn't point at a file, it isn't relevant to this
-question. Every deliberate open during a session is logged in `citations.md`
-(§4.6).
+directory. Select pages using indexed descriptions and aliases, then follow
+relevant page links or evidence refs when deeper context is needed. Stop once
+the answer is grounded; do not exhaust the graph. Every deliberate open during
+a session is logged in `citations.md` (§4.6).
 
 ### 8.2 `index.md` (generated, never hand-edited)
 
@@ -776,17 +778,26 @@ sessions fall out of the window but remain reachable by path and via
 
 ### 8.3 Drill-down by question type (binding for conversational skills)
 
+Reassess retrieval when the topic or its personal significance changes. Personal
+drafting, preferences, choices, and implicit callbacks can require memory even
+without an explicit recall request. Use already-loaded context when sufficient;
+otherwise consult relevant indexed pages before asking the user to repeat known
+background. General questions that do not depend on the user need no additional
+memory traversal.
+
 | Question | Start at | Drill to (only if needed) |
 |---|---|---|
 | Who am I / how have I changed | pinned + relevant `identity/`, `domains/`, `threads/` pages | their `evidence_refs` → source anchors |
+| Personal drafting, preferences, choices ("does this sound like me?") | pinned + index descriptions/aliases → relevant identity, domain, or thread pages | relevant page links, then evidence refs as needed |
+| Implicit callback to an earlier topic | current conversation + index or temporal pointers to that topic | relevant pages or sessions, then source anchors as needed |
 | What's going on lately | temporal context (+ gap summaries) | the sessions it points at |
 | Specific fact/date/person/event | `events/`, `people/`, the session via index | widen the date range, then related sources |
 | "What do you remember about me?" | `index.md` + pinned | whatever the user asks about next |
 
 Confidence governs register everywhere: `high` + `user_confirmed` may be stated
-plainly; anything else is hedged in natural language. If the index points
-nowhere, the honest answer is "I don't think I know that about you yet" — never
-confabulate.
+plainly; anything else is hedged in natural language. If the index and relevant
+links offer no grounding, the honest answer is "I don't think I know that about
+you yet" — never confabulate.
 
 ---
 

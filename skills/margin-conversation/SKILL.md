@@ -24,8 +24,9 @@ nothing else.
 
 ## Session defaults
 
-`skill: conversation`, `consolidation: not_eligible`. Load pinned + temporal
-context at start (lazy-refresh check first). Open naturally from the temporal
+`skill: conversation`, `consolidation: not_eligible`. Load the index map,
+pinned pages, and temporal context at start (lazy-refresh check first). Open
+naturally from the temporal
 hook when it fits — "how did the advisor call go?" beats "how can I help you
 today?" — but follow their lead immediately; the hook is an offer, not an
 agenda.

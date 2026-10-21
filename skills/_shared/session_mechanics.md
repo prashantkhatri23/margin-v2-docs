@@ -17,10 +17,12 @@ disagreement, the spec wins.
    `meta.yml` (spec §4.3), setting `skill:` and the skill's default
    `consolidation:` flag: `conversation → not_eligible`; everything else →
    `eligible`.
-3. Load context per the four tiers (spec §8.1): pinned `system/` always;
-   `temporal_context.md` for conversational skills — applying the lazy-refresh
-   check first (spec §7.3): small gap → load as-is plus the `summary.md` of each
-   newer session; large gap → incremental rebuild, then load.
+3. Load `index.md` as the map of available memory, plus pinned `system/`
+   pages (spec §8.1). For conversational skills, also load
+   `temporal_context.md` — applying the lazy-refresh check first (spec §7.3):
+   small gap → load as-is plus the `summary.md` of each newer session; large
+   gap → incremental rebuild, then load. The index makes deeper pages
+   discoverable; it does not require loading them all.
 
 ## During the session
 
@@ -33,9 +35,13 @@ disagreement, the spec wins.
   `meta.yml: description` current, then commit the session folder
   (`chore(session): <id> through tN`). The index regeneration rides this commit
   (spec §8.2).
+- **Reassess memory relevance** when the topic or its personal significance
+  changes, using `_shared/companion_voice.md` and spec §8.3. Personal drafting,
+  preferences, and implicit callbacks can warrant deeper retrieval.
 - **Log every memory file you open** in `citations.md` with the turn that
-  prompted it (spec §4.6). If the index points nowhere relevant, do not go
-  wandering — not knowing is an honest answer.
+  prompted it (spec §4.6). Navigate through the index and relevant page links;
+  if they offer no grounding, do not go wandering — not knowing is an honest
+  answer.
 - **Attachments:** when the user shares a file, copy it to
   `attachments/att_<n>_<name>`, record the id on the sharing turn, and write a
   one-line description of its contents (spec §4.11). Never depend on the
